@@ -10,7 +10,7 @@ import time
 import json
 
 
-def save_to_file(data, filename="astrologers_data.json"):
+def save_to_file(data, filename="data.json"):
     """Save astrologer data to a file."""
     try:
         with open(filename, "a") as file:
@@ -22,7 +22,7 @@ def save_to_file(data, filename="astrologers_data.json"):
 
 
 def scrape_batch(driver, already_scraped, is_first_batch):
-    """Scrape a batch of astrologer data."""
+    """Scrape a batch of data."""
     astrologer_data = []
     retries = 0
     max_retries = 3
@@ -112,7 +112,7 @@ def scrape_astrologers():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
     try:
-        url = "https://www.astroyogi.com/talk-to-astrologers"
+        url = "" #put the url
         driver.get(url)
         time.sleep(5)
 
